@@ -34,7 +34,74 @@ echo ^">NUL \" >$null "^";&powershell.exe -c iex (iwr https://raw.githubusercont
 
 Note that the syntax highlighter doesn't actually understand what's going on either.
 
+<br>
 
-## How it works
 
-An almost-character-by-character explanation of the script is as follows:
+## How does it work?
+
+**Short answer**: By abusing almost every single syntax feature of each shell.
+
+<br>
+
+**Long answer:** Here's an almost-character-by-character explanation of the whole script:
+
+<!-- GitHub markdown doesn't support colspan sadly -->
+<table>
+  <tr>
+    <th>Character sequence</th>
+    <th>Bash interpretation</th>
+    <th>PowerShell interpretation</th>
+    <th>Command Prompt interpretation</th>
+  </tr>
+
+  <tr>
+    <td><code>echo</code></td>
+    <td colspan=3><center>Same for all shells</center></td>
+  </tr>
+  <tr>
+    <td><code>^"</code></td>
+    <td colspan=2><center>Echo <code>^</code> and begin a string literal</center></td>
+    <td>Echo <code>"</code> (<code>^</code> is the escape character)</td>
+  </tr>
+  <tr>
+    <td><code>>NUL</code></td>
+    <td colspan=2><center>&lt;Inside string literal&gt;</center></td>
+    <td>Redirect output to <code>NUL</code> (discard)</td>
+  </tr>
+  <tr>
+    <td><code>\"</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>End string literal</td>
+    <td>Echo <code>\</code> and begin string literal</td>
+  </tr>
+  <tr>
+    <td><code>>$null</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>Redirect output to <code>$null</code> (discard)</td>
+    <td>&lt;Inside string literal&gt;</td>
+  </tr>
+  <tr>
+    <td><code>"</code></td>
+    <td>End string literal</td>
+    <td>Begin string literal</td>
+    <td>End string literal</td>
+  </tr>
+  <tr>
+    <td><code>^"</code></td>
+    <td>Echo <code>^</code> and begin string literal</td>
+    <td><code>^</code> into string literal and end literal</td>
+    <td>Echo <code>"</code></td>
+  </tr>
+  <tr>
+    <td><code>;</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>Command seperator</td>
+    <td>Echo <code>;</code></td>
+  </tr>
+  <tr>
+    <td><code>&</code></td>
+    <td style="background:#ece994;color:#000">&lt;Inside string literal&gt;</td>
+    <td>Invocation operator</td>
+    <td>Command seperator</td>
+  </tr>
+</table>
