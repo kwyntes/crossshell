@@ -3,4 +3,4 @@
 # be absolutely sure we should still perform an OS check here.
 
 echo "Running through PowerShell (or Batch / Command Prompt)"
-echo "We're most likely on Windows now"
+echo "We\'re most likely on Windows now"
