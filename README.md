@@ -3,6 +3,7 @@ A single shell snippet that works in Bash, PowerShell and Command Prompt.
 
 <br>
 
+
 ### In theory, the script
 
 * on Windows<sup>1</sup> downloads and runs [`windows_code.ps1`](windows_code.ps1)
@@ -12,6 +13,7 @@ A single shell snippet that works in Bash, PowerShell and Command Prompt.
 ##### 2. or any OS that runs a bash-like shell (yeah it could even be Windows through Git Bash or something)
 
 <br>
+
 
 ## The script
 
@@ -31,3 +33,8 @@ echo ^">NUL \" >$null "^";&powershell.exe -c iex (iwr https://raw.githubusercont
 <br>
 
 Note that the syntax highlighter doesn't actually understand what's going on either.
+
+
+## How it works
+
+An almost-character-by-character explanation of the script is as follows:
