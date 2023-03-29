@@ -56,7 +56,7 @@ Note that the syntax highlighter doesn't actually understand what's going on eit
 
   <tr>
     <td><code>echo</code></td>
-    <td colspan=3><center>Same for all shells</center></td>
+    <td colspan=3><center>Echo command</center></td>
   </tr>
   <tr>
     <td><code>^"</code></td>
@@ -100,8 +100,50 @@ Note that the syntax highlighter doesn't actually understand what's going on eit
   </tr>
   <tr>
     <td><code>&</code></td>
-    <td style="background:#ece994;color:#000">&lt;Inside string literal&gt;</td>
+    <td>&lt;Inside string literal&gt;</td>
     <td>Invocation operator</td>
     <td>Command seperator</td>
+  </tr>
+  <tr>
+    <td><code>powershell.exe ...</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td colspan=2>Execute <code>powershell.exe -c iex (iwr __URL_TO_SCRIPT__)</code></td>
+  </tr>
+  <tr>
+    <td><code>;&</code></td>
+    <td colspan=3><center>Same thing as before</center></td>
+  </tr>
+  <tr>
+    <td><code>echo</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td colspan=2><center>Echo command</center></td>
+  </tr>
+  <tr>
+    <td><code>'</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>Begin string literal (single quotes)</td>
+    <td>Echo <code>'</code></td>
+  </tr>
+  <tr>
+    <td><code>>NUL</code></td>
+    <td colspan=2><center>&lt;Inside string literal&gt;</center></td>
+    <td>Redirect output to <code>NUL</code> (discard)</td>
+  </tr>
+  <tr>
+    <td><code>'</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>End string literal (single quotes)</td>
+    <td>Echo <code>'</code></td>
+  </tr>
+  <tr>
+    <td><code>'</code></td>
+    <td>&lt;Inside string literal&gt;</td>
+    <td>Begin string literal (single quotes)</td>
+    <td>Echo <code>'</code></td>
+  </tr>
+  <tr>
+    <td><code>"</code></td>
+    <td>End string literal</td>
+    <td colspan=2 align=center>Begin string literal</td>
   </tr>
 </table>
