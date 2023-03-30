@@ -124,7 +124,7 @@ Note that the syntax highlighter doesn't actually understand what's going on eit
     <td><code>"</code></td>
     <td>"</td>
     <td>End doubleq string literal</td>
-    <td>&lt;Part of argument list&gt;</td>
+    <td>Begin doubleq string literal</td>
   </tr>
   <tr>
     <td><code>;</code></td>
