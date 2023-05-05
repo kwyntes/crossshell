@@ -157,12 +157,6 @@ Note that the syntax highlighter doesn't actually understand what's going on eit
     <td>"</td>
   </tr>
   <tr>
-    <td><code>'</code></td>
-    <td>End singleq string literal</td>
-    <td>&lt;Inside singleq string literal&gt;</td>
-    <td>"</td>
-  </tr>
-  <tr>
     <td><code>>/dev/null</code></td>
     <td>Redirect output to <code>/dev/null</code> (discard)</td>
     <td>"</td>
