@@ -159,7 +159,7 @@ Note that the syntax highlighter doesn't actually understand what's going on eit
   <tr>
     <td><code>>/dev/null</code></td>
     <td>Redirect output to <code>/dev/null</code> (discard)</td>
-    <td>"</td>
+    <td>&lt;Inside singleq string literal&gt;</td>
     <td>"</td>
   </tr>
   <tr>
